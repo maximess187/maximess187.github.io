@@ -1,26 +1,28 @@
 
 <!doctype html>
 <html lang="de">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Maxim Ess – Apps & Datenschutz</title>
 
   <meta name="description"
-        content="Offizielle Entwicklerseite von Maxim Ess. Informationen zu Nonogramm, PlatformPilot, Support und Datenschutz." />
+        content="Offizielle Entwicklerseite von Maxim Ess. Informationen zu Nonogramm, PlatformPilot, Datenschutz und Support.">
 
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="theme-color" content="#0f172a">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Maxim Ess – Apps" />
+  <meta property="og:title" content="Maxim Ess – Apps">
   <meta property="og:description"
-        content="Entdecke meine Apps Nonogramm und PlatformPilot." />
-  <meta property="og:type" content="website" />
+        content="Entdecke Nonogramm und PlatformPilot.">
+  <meta property="og:type" content="website">
   <meta property="og:url"
-        content="https://maximess187.github.io/" />
+        content="https://maximess187.github.io/">
 
   <style>
+
     :root {
       --bg: #0b1220;
       --card: #0f172a;
@@ -28,7 +30,7 @@
       --text: #e5e7eb;
       --accent: #22c55e;
       --accent-2: #60a5fa;
-      --ring: rgba(96,165,250,.35);
+      --border: rgba(148,163,184,.15);
       --radius: 18px;
       --shadow: 0 10px 30px rgba(2,6,23,.6);
     }
@@ -75,15 +77,17 @@
     }
 
     .container {
-      max-width: 960px;
-      margin-inline: auto;
+      max-width: 1000px;
+      margin: auto;
       padding: 28px;
     }
 
+    /* HEADER */
+
     header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
       gap: 16px;
     }
@@ -92,14 +96,15 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      font-size: 19px;
       font-weight: 700;
-      letter-spacing: .2px;
     }
 
     .dot {
-      inline-size: 12px;
-      block-size: 12px;
+      width: 13px;
+      height: 13px;
       border-radius: 50%;
+
       background: linear-gradient(
         135deg,
         var(--accent),
@@ -114,47 +119,57 @@
     }
 
     nav a {
-      opacity: .9;
-      padding: 6px 10px;
+      padding: 8px 12px;
       border-radius: 10px;
+      color: var(--muted);
+      transition: .2s;
     }
 
     nav a:hover {
+      color: var(--text);
       background: rgba(148,163,184,.1);
     }
 
-    .hero {
-      margin: 48px 0 32px;
+    /* ALLGEMEIN */
+
+    section {
+      margin: 42px 0;
+      scroll-margin-top: 24px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.2;
+      margin: 0 0 16px;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin: 0 0 22px;
+    }
+
+    h3 {
+      font-size: 21px;
+      margin: 0 0 12px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .muted {
+      color: var(--muted);
     }
 
     .card {
       background: var(--card);
-      border: 1px solid rgba(148,163,184,.12);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 28px;
+      padding: 30px;
       box-shadow: var(--shadow);
     }
 
-    h1 {
-      font-size: clamp(28px, 4vw, 40px);
-      line-height: 1.2;
-      margin: 0 0 14px;
-    }
-
-    h2 {
-      font-size: 25px;
-      margin: 0 0 18px;
-    }
-
-    h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
-    }
-
-    p.lead {
-      color: var(--muted);
-      margin: 0 0 18px;
-    }
+    /* BUTTONS */
 
     .btns {
       display: flex;
@@ -168,140 +183,184 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 12px 16px;
-      border-radius: 14px;
-      border: 1px solid rgba(148,163,184,.15);
+
+      padding: 12px 17px;
+      border-radius: 12px;
+
       background: rgba(148,163,184,.06);
-      font-weight: 500;
+      border: 1px solid var(--border);
+
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+
       transition: .2s ease;
     }
 
     .btn:hover {
-      border-color: rgba(148,163,184,.4);
       transform: translateY(-2px);
+      border-color: var(--accent-2);
     }
 
     .btn.primary {
       background: linear-gradient(
         135deg,
-        rgba(34,197,94,.15),
-        rgba(96,165,250,.15)
+        rgba(34,197,94,.18),
+        rgba(96,165,250,.18)
       );
+
       border-color: rgba(96,165,250,.35);
     }
 
-    .apps {
-      margin: 40px 0;
+    /* HERO */
+
+    .hero {
+      margin-top: 50px;
     }
+
+    .hero p {
+      max-width: 680px;
+    }
+
+    /* APP KARTEN */
 
     .app-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
 
     .app-card {
+      display: flex;
+      flex-direction: column;
       background: var(--card);
-      border: 1px solid rgba(148,163,184,.12);
+
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 28px;
+
+      padding: 30px;
       box-shadow: var(--shadow);
       transition: .2s ease;
     }
 
     .app-card:hover {
-      border-color: rgba(96,165,250,.4);
       transform: translateY(-3px);
+      border-color: rgba(96,165,250,.4);
     }
 
     .app-icon {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 60px;
-      height: 60px;
-      border-radius: 16px;
+
+      width: 66px;
+      height: 66px;
       margin-bottom: 20px;
-      font-size: 28px;
+
+      border-radius: 17px;
+      font-size: 30px;
+
       background: linear-gradient(
         135deg,
-        rgba(34,197,94,.18),
-        rgba(96,165,250,.18)
+        rgba(34,197,94,.2),
+        rgba(96,165,250,.2)
       );
     }
 
     .app-card p {
       color: var(--muted);
-      margin: 0;
     }
 
     .app-status {
       display: inline-block;
-      margin-top: 20px;
-      padding: 6px 12px;
+      align-self: flex-start;
+
+      margin-top: 6px;
+      padding: 5px 12px;
+
       border-radius: 8px;
       font-size: 13px;
+
       color: var(--accent);
       background: rgba(34,197,94,.1);
     }
 
+    .app-card .btns {
+      margin-top: auto;
+      padding-top: 24px;
+    }
+
+    /* INFORMATIONEN */
+
     .features {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin: 36px 0;
+      gap: 18px;
     }
 
     .feature {
       background: rgba(15,23,42,.75);
-      border: 1px solid rgba(148,163,184,.12);
+
+      border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 22px;
+      padding: 24px;
     }
 
     .feature h3 {
       font-size: 18px;
-      margin-bottom: 8px;
     }
 
     .feature p {
-      margin: 0;
       color: var(--muted);
       font-size: 14px;
+      margin: 0;
+    }
+
+    .info-card {
+      margin-bottom: 20px;
+    }
+
+    .info-card p {
+      color: var(--muted);
+    }
+
+    .info-card a:not(.btn) {
+      color: var(--accent-2);
+      overflow-wrap: anywhere;
+    }
+
+    .info-card a:not(.btn):hover {
+      text-decoration: underline;
+    }
+
+    .privacy-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
     }
 
     .kbd {
       font-family: ui-monospace, SFMono-Regular,
                    Menlo, Monaco, Consolas,
                    "Liberation Mono", monospace;
-      background: rgba(148,163,184,.08);
-      padding: 2px 6px;
+
+      padding: 3px 7px;
       border-radius: 8px;
-      border: 1px solid rgba(148,163,184,.15);
+
+      background: rgba(148,163,184,.08);
+      border: 1px solid var(--border);
     }
 
-    .info {
-      margin: 36px 0;
-    }
-
-    .info p {
-      color: var(--muted);
-    }
-
-    .info a {
-      color: var(--accent-2);
-      overflow-wrap: anywhere;
-    }
-
-    .info a:hover {
-      text-decoration: underline;
-    }
+    /* FOOTER */
 
     footer {
-      margin: 50px 0 10px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(148,163,184,.12);
+      margin-top: 55px;
+      padding: 25px 0 10px;
+
+      border-top: 1px solid var(--border);
       color: var(--muted);
+
       font-size: 14px;
       text-align: center;
     }
@@ -310,7 +369,18 @@
       color: var(--accent-2);
     }
 
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    /* RESPONSIVE */
+
     @media (max-width: 800px) {
+
       .app-grid {
         grid-template-columns: 1fr;
       }
@@ -318,286 +388,425 @@
       .features {
         grid-template-columns: 1fr 1fr;
       }
+
     }
 
     @media (max-width: 600px) {
+
       .container {
         padding: 20px;
       }
 
       .hero {
-        margin: 30px 0;
+        margin-top: 30px;
+      }
+
+      .card,
+      .app-card {
+        padding: 23px;
       }
 
       .features {
         grid-template-columns: 1fr;
       }
 
-      .card,
-      .app-card {
-        padding: 22px;
-      }
-
-      .btns {
+      .btns,
+      .privacy-links {
         flex-direction: column;
       }
 
       .btn {
         width: 100%;
       }
+
+      nav {
+        gap: 2px;
+      }
+
+      nav a {
+        padding: 7px 9px;
+        font-size: 14px;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <!-- HEADER -->
-    <header>
+  <!-- HEADER -->
 
-      <div class="brand">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Maxim Ess</span>
+  <header>
+
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Maxim Ess</span>
+    </div>
+
+    <nav aria-label="Hauptnavigation">
+
+      <a href="/" aria-current="page">
+        Start
+      </a>
+
+      <a href="#apps">
+        Apps
+      </a>
+
+      <a href="#datenschutz">
+        Datenschutz
+      </a>
+
+      <a href="#kontakt">
+        Kontakt
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- WILLKOMMEN -->
+
+  <main>
+
+  <section class="hero">
+
+    <div class="card">
+
+      <h1>Willkommen!</h1>
+
+      <p class="muted">
+        Dies ist die offizielle Entwicklerseite
+        von Maxim Ess.
+      </p>
+
+      <p class="muted">
+        Hier findest du Informationen zu
+        meinen Android-Apps Nonogramm und
+        PlatformPilot sowie Kontaktmöglichkeiten
+        und die jeweiligen Datenschutzerklärungen.
+      </p>
+
+      <div class="btns">
+
+        <a class="btn primary" href="#apps">
+          Meine Apps entdecken
+        </a>
+
+        <a class="btn" href="#datenschutz">
+          Datenschutzerklärungen
+        </a>
+
+        <a class="btn"
+           href="mailto:contact.maximess@gmail.com">
+          Kontakt aufnehmen
+        </a>
+
       </div>
 
-      <nav aria-label="Hauptnavigation">
-        <a href="/" aria-current="page">Start</a>
-        <a href="#apps">Meine Apps</a>
-        <a href="/app-datenschutz/">Datenschutz</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
+    </div>
 
-    </header>
+  </section>
 
-    <!-- WILLKOMMEN -->
-    <section class="hero">
 
-      <div class="card">
+  <!-- MEINE APPS -->
 
-        <h1>Willkommen!</h1>
+  <section id="apps">
 
-        <p class="lead">
-          Dies ist die offizielle Entwicklerseite
-          von Maxim Ess.
+    <h2>Meine Apps</h2>
+
+    <div class="app-grid">
+
+
+      <!-- NONOGRAMM -->
+
+      <article class="app-card">
+
+        <div class="app-icon" aria-hidden="true">
+          🧩
+        </div>
+
+        <h3>Nonogramm</h3>
+
+        <p>
+          Ein entspanntes Logikrätsel,
+          bei dem du durch geschicktes
+          Kombinieren versteckte Bilder
+          aufdeckst.
         </p>
 
-        <p class="lead">
-          Hier findest du Informationen zu meinen
-          Android-Apps, Supportmöglichkeiten
-          und die Datenschutzerklärung.
+        <p>
+          Löse abwechslungsreiche Rätsel
+          und trainiere dein logisches Denken.
         </p>
+
+        <span class="app-status">
+          Android-App
+        </span>
 
         <div class="btns">
 
-          <a class="btn primary" href="#apps">
-            Meine Apps entdecken
-          </a>
+          <a class="btn primary"
+             href="https://maximess187.github.io/app-datenschutz/Nonogramm/"
+             target="_blank"
+             rel="noopener noreferrer">
 
-          <a class="btn" href="/app-datenschutz/">
-            Datenschutz ansehen
-          </a>
-
-          <a class="btn" href="mailto:maximess187@gmail.com">
-            E-Mail senden
+            Datenschutzerklärung
           </a>
 
         </div>
 
-      </div>
+      </article>
 
-    </section>
 
-    <!-- MEINE APPS -->
-    <section class="apps" id="apps">
+      <!-- PLATFORMPILOT -->
 
-      <h2>Meine Apps</h2>
+      <article class="app-card">
 
-      <div class="app-grid">
+        <div class="app-icon" aria-hidden="true">
+          🎮
+        </div>
 
-        <!-- NONOGRAMM -->
-        <article class="app-card">
-
-          <div class="app-icon" aria-hidden="true">
-            🧩
-          </div>
-
-          <h3>Nonogramm</h3>
-
-          <p>
-            Ein entspanntes Logikrätsel,
-            bei dem du durch geschicktes
-            Kombinieren versteckte Bilder
-            aufdeckst.
-          </p>
-
-          <p style="margin-top:14px;">
-            Löse spannende Rätsel und
-            trainiere dein logisches Denken.
-          </p>
-
-          <span class="app-status">
-            Android-App
-          </span>
-
-        </article>
-
-        <!-- PLATFORMPILOT -->
-        <article class="app-card">
-
-          <div class="app-icon" aria-hidden="true">
-            🎮
-          </div>
-
-          <h3>PlatformPilot</h3>
-
-          <p>
-            Ein Plattformspiel mit
-            Herausforderungen und
-            Belohnungen.
-          </p>
-
-          <p style="margin-top:14px;">
-            Meistere verschiedene Aufgaben,
-            sammle Belohnungen und
-            verbessere deine Spielerfahrung.
-          </p>
-
-          <span class="app-status">
-            Android-App
-          </span>
-
-        </article>
-
-      </div>
-
-    </section>
-
-    <!-- INFORMATIONEN -->
-    <section class="features">
-
-      <div class="feature">
-
-        <h3>Datenschutz</h3>
+        <h3>PlatformPilot</h3>
 
         <p>
-          Informationen zur Verarbeitung
-          personenbezogener Daten findest
-          du in der Datenschutzerklärung.
-        </p>
-
-      </div>
-
-      <div class="feature">
-
-        <h3>Support</h3>
-
-        <p>
-          Fragen, Probleme oder Feedback?
-          Kontaktiere mich gerne per E-Mail.
-        </p>
-
-      </div>
-
-      <div class="feature">
-
-        <h3>Transparenz</h3>
-
-        <p>
-          Die öffentlich zugängliche
-          <span class="kbd">app-ads.txt</span>
-          enthält Informationen zu
-          autorisierten Werbepartnern.
-        </p>
-
-      </div>
-
-    </section>
-
-    <!-- WERBEPARTNER -->
-    <section class="info">
-
-      <div class="card">
-
-        <h2>Werbepartner</h2>
-
-        <p>
-          Zur Transparenz und Verifizierung
-          von Werbepartnern stellen wir
-          eine öffentlich zugängliche
-          app-ads.txt-Datei bereit.
+          Ein Plattformspiel mit
+          Herausforderungen und Belohnungen.
         </p>
 
         <p>
-          <strong>app-ads.txt:</strong>
-          <a href="/app-ads.txt">
-            https://maximess187.github.io/app-ads.txt
+          Meistere verschiedene Aufgaben,
+          sammle Belohnungen und
+          verbessere deine Spielerfahrung.
+        </p>
+
+        <span class="app-status">
+          Android-App
+        </span>
+
+        <div class="btns">
+
+          <a class="btn primary"
+             href="https://maximess187.github.io/app-datenschutz/PlatformPilot/"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            Datenschutzerklärung
           </a>
-        </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- WEITERE INFORMATIONEN -->
+
+  <section class="features"
+           aria-label="Weitere Informationen">
+
+    <div class="feature">
+
+      <h3>Datenschutz</h3>
+
+      <p>
+        Für jede App steht eine eigene
+        Datenschutzerklärung bereit.
+      </p>
+
+    </div>
+
+    <div class="feature">
+
+      <h3>Support</h3>
+
+      <p>
+        Fragen, Probleme oder Feedback?
+        Kontaktiere mich gerne per E-Mail.
+      </p>
+
+    </div>
+
+    <div class="feature">
+
+      <h3>Transparenz</h3>
+
+      <p>
+        Die öffentlich zugängliche
+        app-ads.txt-Datei listet
+        autorisierte Werbepartner.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- DATENSCHUTZ -->
+
+  <section id="datenschutz">
+
+    <div class="card info-card">
+
+      <h2>Datenschutzerklärungen</h2>
+
+      <p>
+        Für meine Apps stehen separate
+        Datenschutzerklärungen zur Verfügung.
+        Diese enthalten Informationen
+        zur jeweiligen Datenverarbeitung.
+      </p>
+
+      <div class="privacy-links">
+
+        <a class="btn primary"
+           href="https://maximess187.github.io/app-datenschutz/Nonogramm/"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          Datenschutz Nonogramm
+        </a>
+
+        <a class="btn primary"
+           href="https://maximess187.github.io/app-datenschutz/PlatformPilot/"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          Datenschutz PlatformPilot
+        </a>
 
       </div>
 
-    </section>
+    </div>
 
-    <!-- KONTAKT -->
-    <section class="info" id="kontakt">
+  </section>
 
-      <div class="card">
 
-        <h2>Kontakt & Support</h2>
+  <!-- WERBEPARTNER -->
 
-        <p>
-          Bei Fragen zu Nonogramm,
-          PlatformPilot oder technischen
-          Problemen kannst du mich
-          direkt kontaktieren.
-        </p>
+  <section id="werbepartner">
 
-        <p>
-          <strong>E-Mail:</strong>
-          <a href="mailto:contact.maximess@gmail.com">
-           contact.maximess@gmail.com
-          </a>
-        </p>
+    <div class="card info-card">
 
-        <p>
-          <strong>Datenschutzerklärung:</strong>
-          <a href="/app-datenschutz/">
-            Datenschutzerklärung öffnen
-          </a>
-        </p>
+      <h2>Werbepartner</h2>
 
-      </div>
+      <p>
+        Zur Transparenz und Verifizierung
+        autorisierter Werbepartner wird
+        eine öffentliche app-ads.txt-Datei
+        bereitgestellt.
+      </p>
 
-    </section>
+      <p>
+        <strong>app-ads.txt:</strong>
+      </p>
 
-    <!-- FOOTER -->
-    <footer>
+      <p>
+        <a href="/app-ads.txt"
+           target="_blank"
+           rel="noopener noreferrer">
 
-      <div>
-        © <span id="y"></span> Maxim Ess
-        ·
+          https://maximess187.github.io/app-ads.txt
+
+        </a>
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- KONTAKT -->
+
+  <section id="kontakt">
+
+    <div class="card info-card">
+
+      <h2>Kontakt & Support</h2>
+
+      <p>
+        Bei Fragen zu Nonogramm,
+        PlatformPilot oder technischen
+        Problemen kannst du mich direkt
+        per E-Mail kontaktieren.
+      </p>
+
+      <p>
+        <strong>E-Mail-Adresse:</strong>
+      </p>
+
+      <p>
         <a href="mailto:contact.maximess@gmail.com">
-          Kontakt
+          contact.maximess@gmail.com
         </a>
-        ·
-        <a href="/app-datenschutz/">
-          Datenschutz
-        </a>
-        ·
-        <a href="/app-ads.txt">
-          app-ads.txt
-        </a>
-      </div>
+      </p>
 
-    </footer>
+    </div>
 
-  </div>
+  </section>
 
-  <script>
-    document.getElementById("y").textContent =
-      new Date().getFullYear();
-  </script>
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div>
+      © <span id="y"></span> Maxim Ess
+    </div>
+
+    <div class="footer-links">
+
+      <a href="#apps">
+        Apps
+      </a>
+
+      <span>·</span>
+
+      <a href="https://maximess187.github.io/app-datenschutz/Nonogramm/">
+        Datenschutz Nonogramm
+      </a>
+
+      <span>·</span>
+
+      <a href="https://maximess187.github.io/app-datenschutz/PlatformPilot/">
+        Datenschutz PlatformPilot
+      </a>
+
+      <span>·</span>
+
+      <a href="/app-ads.txt">
+        app-ads.txt
+      </a>
+
+      <span>·</span>
+
+      <a href="mailto:contact.maximess@gmail.com">
+        Kontakt
+      </a>
+
+    </div>
+
+  </footer>
+
+</div>
+
+
+<script>
+
+  document.getElementById("y").textContent =
+    new Date().getFullYear();
+
+</script>
 
 </body>
 </html>
