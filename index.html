@@ -1,104 +1,603 @@
+
 <!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maxim Ess – Apps & Privacy</title>
-  <meta name="description" content="Offizielle Entwicklerseite. Infos zu Apps, Support und Datenschutz." />
+
+  <title>Maxim Ess – Apps & Datenschutz</title>
+
+  <meta name="description"
+        content="Offizielle Entwicklerseite von Maxim Ess. Informationen zu Nonogramm, PlatformPilot, Support und Datenschutz." />
+
   <meta name="theme-color" content="#0f172a" />
-  <!-- Open Graph / Twitter (optional, nice when sharing) -->
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Maxim Ess – Apps" />
-  <meta property="og:description" content="Offizielle Entwicklerseite. Infos zu Apps, Support und Datenschutz." />
+  <meta property="og:description"
+        content="Entdecke meine Apps Nonogramm und PlatformPilot." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://maximess187.github.io/" />
+  <meta property="og:url"
+        content="https://maximess187.github.io/" />
+
   <style>
-    :root{
-      --bg:#0b1220;  /* slate-950 */
-      --card:#0f172a; /* slate-900 */
-      --muted:#94a3b8; /* slate-400 */
-      --text:#e5e7eb; /* slate-200 */
-      --accent:#22c55e; /* green-500 */
-      --accent-2:#60a5fa; /* blue-400 */
+    :root {
+      --bg: #0b1220;
+      --card: #0f172a;
+      --muted: #94a3b8;
+      --text: #e5e7eb;
+      --accent: #22c55e;
+      --accent-2: #60a5fa;
       --ring: rgba(96,165,250,.35);
       --radius: 18px;
-      --shadow: 0 10px 30px rgba(2, 6, 23, .6);
+      --shadow: 0 10px 30px rgba(2,6,23,.6);
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif;background:radial-gradient(1200px 600px at 80% -100px, rgba(96,165,250,.12), transparent), linear-gradient(180deg, #0b1220 0%, #0b1220 60%, #0a0f1c 100%);color:var(--text)}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:960px;margin-inline:auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.2px}
-    .dot{inline-size:12px;block-size:12px;border-radius:50%;background:linear-gradient(135deg, var(--accent), var(--accent-2))}
-    nav a{opacity:.9;padding:6px 10px;border-radius:10px}
-    nav a:hover{background:rgba(148,163,184,.1)}
 
-    .hero{margin:48px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
-    @media (max-width:800px){.hero{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
-    h1{font-size:clamp(28px, 4vw, 40px);line-height:1.2;margin:0 0 10px}
-    p.lead{color:var(--muted);margin:0 0 18px}
+    * {
+      box-sizing: border-box;
+    }
 
-    .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid rgba(148,163,184,.15);background:rgba(148,163,184,.06)}
-    .btn:hover{border-color:rgba(148,163,184,.3)}
-    .btn.primary{background:linear-gradient(135deg, rgba(34,197,94,.15), rgba(96,165,250,.15));border-color:rgba(96,165,250,.35);box-shadow:0 0 0 3px var(--ring)}
+    html {
+      scroll-behavior: smooth;
+    }
 
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    @media (max-width:900px){.features{grid-template-columns:1fr 1fr}}
-    @media (max-width:600px){.features{grid-template-columns:1fr}}
-    .feature h3{margin:0 0 6px;font-size:18px}
-    .feature p{margin:0;color:var(--muted)}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font: 16px/1.6 system-ui, -apple-system,
+            Segoe UI, Roboto, Ubuntu, Cantarell,
+            Noto Sans, Helvetica, Arial, sans-serif;
 
-    .mini{display:grid;gap:10px}
-    .mini a{display:inline-flex;align-items:center;gap:10px}
+      background:
+        radial-gradient(
+          1200px 600px at 80% -100px,
+          rgba(96,165,250,.12),
+          transparent
+        ),
+        linear-gradient(
+          180deg,
+          #0b1220 0%,
+          #0b1220 60%,
+          #0a0f1c 100%
+        );
 
-    footer{margin:40px 0 10px;color:var(--muted);font-size:14px;text-align:center}
-    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;background:rgba(148,163,184,.08);padding:2px 6px;border-radius:8px;border:1px solid rgba(148,163,184,.15)}
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent-2);
+      outline-offset: 4px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin-inline: auto;
+      padding: 28px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    .dot {
+      inline-size: 12px;
+      block-size: 12px;
+      border-radius: 50%;
+      background: linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent-2)
+      );
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    nav a {
+      opacity: .9;
+      padding: 6px 10px;
+      border-radius: 10px;
+    }
+
+    nav a:hover {
+      background: rgba(148,163,184,.1);
+    }
+
+    .hero {
+      margin: 48px 0 32px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(148,163,184,.12);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      margin: 0 0 14px;
+    }
+
+    h2 {
+      font-size: 25px;
+      margin: 0 0 18px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    p.lead {
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(148,163,184,.15);
+      background: rgba(148,163,184,.06);
+      font-weight: 500;
+      transition: .2s ease;
+    }
+
+    .btn:hover {
+      border-color: rgba(148,163,184,.4);
+      transform: translateY(-2px);
+    }
+
+    .btn.primary {
+      background: linear-gradient(
+        135deg,
+        rgba(34,197,94,.15),
+        rgba(96,165,250,.15)
+      );
+      border-color: rgba(96,165,250,.35);
+    }
+
+    .apps {
+      margin: 40px 0;
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .app-card {
+      background: var(--card);
+      border: 1px solid rgba(148,163,184,.12);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: .2s ease;
+    }
+
+    .app-card:hover {
+      border-color: rgba(96,165,250,.4);
+      transform: translateY(-3px);
+    }
+
+    .app-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      font-size: 28px;
+      background: linear-gradient(
+        135deg,
+        rgba(34,197,94,.18),
+        rgba(96,165,250,.18)
+      );
+    }
+
+    .app-card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .app-status {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--accent);
+      background: rgba(34,197,94,.1);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 36px 0;
+    }
+
+    .feature {
+      background: rgba(15,23,42,.75);
+      border: 1px solid rgba(148,163,184,.12);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .feature h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .kbd {
+      font-family: ui-monospace, SFMono-Regular,
+                   Menlo, Monaco, Consolas,
+                   "Liberation Mono", monospace;
+      background: rgba(148,163,184,.08);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid rgba(148,163,184,.15);
+    }
+
+    .info {
+      margin: 36px 0;
+    }
+
+    .info p {
+      color: var(--muted);
+    }
+
+    .info a {
+      color: var(--accent-2);
+      overflow-wrap: anywhere;
+    }
+
+    .info a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin: 50px 0 10px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(148,163,184,.12);
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    footer a:hover {
+      color: var(--accent-2);
+    }
+
+    @media (max-width: 800px) {
+      .app-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      .hero {
+        margin: 30px 0;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .card,
+      .app-card {
+        padding: 22px;
+      }
+
+      .btns {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <div class="container">
+
+    <!-- HEADER -->
     <header>
-      <div class="brand"><span class="dot" aria-hidden="true"></span> <span>Maxim Ess</span></div>
-      <nav aria-label="Top Navigation">
+
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Maxim Ess</span>
+      </div>
+
+      <nav aria-label="Hauptnavigation">
         <a href="/" aria-current="page">Start</a>
+        <a href="#apps">Meine Apps</a>
         <a href="/app-datenschutz/">Datenschutz</a>
-        <!-- Falls du ein Impressum brauchst, füge hier einen Link ein -->
+        <a href="#kontakt">Kontakt</a>
       </nav>
+
     </header>
 
+    <!-- WILLKOMMEN -->
     <section class="hero">
+
       <div class="card">
-        <h1>Willkommen! 👋</h1>
-        <p class="lead">Dies ist die offizielle Entwicklerseite. Hier findest du Informationen zu meinen Apps, Support‑Links und die <a href="/app-datenschutz/">Datenschutzerklärung</a>. Die Datei <span class="kbd">/app-ads.txt</span> ist für Werbenetzwerke öffentlich zugänglich.</p>
+
+        <h1>Willkommen!</h1>
+
+        <p class="lead">
+          Dies ist die offizielle Entwicklerseite
+          von Maxim Ess.
+        </p>
+
+        <p class="lead">
+          Hier findest du Informationen zu meinen
+          Android-Apps, Supportmöglichkeiten
+          und die Datenschutzerklärung.
+        </p>
+
         <div class="btns">
-          <!-- Ersetze den Play-Link, sobald du ihn hast -->
-          <a class="btn primary" href="#play" aria-label="Zur App im Google Play Store">➡ Zum Google Play Store</a>
-          <a class="btn" href="/app-datenschutz/" aria-label="Zur Datenschutzerklärung">Datenschutz ansehen</a>
-          <a class="btn" href="mailto:maximess187@gmail.com" aria-label="E-Mail an den Entwickler">E‑Mail senden</a>
+
+          <a class="btn primary" href="#apps">
+            Meine Apps entdecken
+          </a>
+
+          <a class="btn" href="/app-datenschutz/">
+            Datenschutz ansehen
+          </a>
+
+          <a class="btn" href="mailto:maximess187@gmail.com">
+            E-Mail senden
+          </a>
+
         </div>
+
       </div>
-      <div class="card mini">
-        <div class="feature">
-          <h3>Aktuelle App: Nonogramm</h3>
-          <p>Ein entspanntes Logikrätsel mit klarer Oberfläche und ohne Tracking.</p>
-        </div>
-        <div class="features">
-          <div class="feature"><h3>Datenschutz</h3><p>Keine unnötigen Berechtigungen. Details siehe Datenschutzseite.</p></div>
-          <div class="feature"><h3>Support</h3><p>Feedback? Schreibe mir per E‑Mail – ich antworte zeitnah.</p></div>
-          <div class="feature"><h3>Transparenz</h3><p><span class="kbd">/app-ads.txt</span> listet autorisierte Werbepartner.</p></div>
-        </div>
-      </div>
+
     </section>
 
+    <!-- MEINE APPS -->
+    <section class="apps" id="apps">
+
+      <h2>Meine Apps</h2>
+
+      <div class="app-grid">
+
+        <!-- NONOGRAMM -->
+        <article class="app-card">
+
+          <div class="app-icon" aria-hidden="true">
+            🧩
+          </div>
+
+          <h3>Nonogramm</h3>
+
+          <p>
+            Ein entspanntes Logikrätsel,
+            bei dem du durch geschicktes
+            Kombinieren versteckte Bilder
+            aufdeckst.
+          </p>
+
+          <p style="margin-top:14px;">
+            Löse spannende Rätsel und
+            trainiere dein logisches Denken.
+          </p>
+
+          <span class="app-status">
+            Android-App
+          </span>
+
+        </article>
+
+        <!-- PLATFORMPILOT -->
+        <article class="app-card">
+
+          <div class="app-icon" aria-hidden="true">
+            🎮
+          </div>
+
+          <h3>PlatformPilot</h3>
+
+          <p>
+            Ein Plattformspiel mit
+            Herausforderungen und
+            Belohnungen.
+          </p>
+
+          <p style="margin-top:14px;">
+            Meistere verschiedene Aufgaben,
+            sammle Belohnungen und
+            verbessere deine Spielerfahrung.
+          </p>
+
+          <span class="app-status">
+            Android-App
+          </span>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- INFORMATIONEN -->
+    <section class="features">
+
+      <div class="feature">
+
+        <h3>Datenschutz</h3>
+
+        <p>
+          Informationen zur Verarbeitung
+          personenbezogener Daten findest
+          du in der Datenschutzerklärung.
+        </p>
+
+      </div>
+
+      <div class="feature">
+
+        <h3>Support</h3>
+
+        <p>
+          Fragen, Probleme oder Feedback?
+          Kontaktiere mich gerne per E-Mail.
+        </p>
+
+      </div>
+
+      <div class="feature">
+
+        <h3>Transparenz</h3>
+
+        <p>
+          Die öffentlich zugängliche
+          <span class="kbd">app-ads.txt</span>
+          enthält Informationen zu
+          autorisierten Werbepartnern.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- WERBEPARTNER -->
+    <section class="info">
+
+      <div class="card">
+
+        <h2>Werbepartner</h2>
+
+        <p>
+          Zur Transparenz und Verifizierung
+          von Werbepartnern stellen wir
+          eine öffentlich zugängliche
+          app-ads.txt-Datei bereit.
+        </p>
+
+        <p>
+          <strong>app-ads.txt:</strong>
+          <a href="/app-ads.txt">
+            https://maximess187.github.io/app-ads.txt
+          </a>
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="info" id="kontakt">
+
+      <div class="card">
+
+        <h2>Kontakt & Support</h2>
+
+        <p>
+          Bei Fragen zu Nonogramm,
+          PlatformPilot oder technischen
+          Problemen kannst du mich
+          direkt kontaktieren.
+        </p>
+
+        <p>
+          <strong>E-Mail:</strong>
+          <a href="mailto:maximess187@gmail.com">
+            maximess187@gmail.com
+          </a>
+        </p>
+
+        <p>
+          <strong>Datenschutzerklärung:</strong>
+          <a href="/app-datenschutz/">
+            Datenschutzerklärung öffnen
+          </a>
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-      <div>© <span id="y"></span> Maxim Ess • <a href="mailto:maximess187@gmail.com">Kontakt</a></div>
+
+      <div>
+        © <span id="y"></span> Maxim Ess
+        ·
+        <a href="mailto:maximess187@gmail.com">
+          Kontakt
+        </a>
+        ·
+        <a href="/app-datenschutz/">
+          Datenschutz
+        </a>
+        ·
+        <a href="/app-ads.txt">
+          app-ads.txt
+        </a>
+      </div>
+
     </footer>
+
   </div>
+
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById("y").textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>
